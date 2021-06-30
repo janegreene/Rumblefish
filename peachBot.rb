@@ -14,10 +14,25 @@ def displayPathtoPrincess(n,grid)
   #   else e.include? 'm'
   #     e.index('m')
   #   end
-    # if i ==
+    # def coordinates(e)
+    #   each_with_index do |subarray, i|
+    #     j = subarray.index(element)
+    #     return i, j if j
+    #   end
+    #   nil
+    # end
+    # array.coordinates(m)     # => [1, 1]
+    # array.coordinates(p)     # => [2, 0]
     grid.each_with_index do |e,i|
-      puts e,i
-
+      if e.include? 'p'
+        py = e.index('p')
+        p = i, py if py
+      elsif  e.include? 'm'
+        my = e.index('m')
+        m = i, my if my
+      end
+      puts "p = #{p}" if p
+      puts "m = #{m}" if m
     end
 end
 
